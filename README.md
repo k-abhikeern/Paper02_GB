@@ -32,8 +32,7 @@ This repository contains MATLAB scripts designed to produce results for Single-L
 
 ## Requirements
 
-- MATLAB (version X.X or later)
-- Required MATLAB toolboxes (if any) specified in the scripts
+- Required MATLAB Optimisation toolbox
 
 ## License
 
@@ -41,5 +40,5 @@ This repository is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any questions or issues, please contact [Your Name] at [Your Email].
+For any questions or issues, please contact [Kunwar Abhikeern] at [kunwarabhikeern@gmail.com].
 
