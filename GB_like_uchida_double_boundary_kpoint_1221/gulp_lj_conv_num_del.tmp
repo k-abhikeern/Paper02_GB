@@ -1,0 +1,25 @@
+phon dispersion groupvelocity numerical
+name graphene
+
+sfinite 0.00001
+
+vectors
+@vectors
+
+#-----REBO POTENTIAL-------
+REBO
+#-------------------------  
+
+cartesian region 1
+@cartesian_r1
+
+element  
+mass C 12.01  
+end
+
+species 
+C core 0.0
+
+kpoint
+KPT
+output freq text freq.gout

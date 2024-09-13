@@ -1,0 +1,41 @@
+clear
+units metal
+dimension 3 
+boundary p p p		# not periodic unlike SLG
+atom_style atomic
+
+variable        dt              equal 0.0005                    # timestep = 0.2 fs
+timestep        ${dt}
+
+neighbor 2.0 nsq
+
+read_data	lmp_metal_min.in.x0.1 #min.lammps
+mass 1 12.01
+
+# Choose the appropriate potential
+pair_style airebo 3.0 0 0 
+pair_coeff * * CH.airebo C  
+#pair_style      tersoff
+#pair_coeff      * * SiC_optimized.tersoff C
+########################## Stage 0: Energy minimisation  #############################################################################
+
+# Compute and print desired thermodynamic information
+dump 1 all      custom 10000 dump_min_AIREBO.lammpstrj id type x  y  z			# energy minimisation
+#dump_modify    1 sort id  format "%d %d %10.6f  %10.6f  %g %g %g %g"
+dump_modify     1 sort id
+
+thermo_style    custom step pe ke temp pxx pyy pxy pzz xlo xhi ylo yhi fmax fnorm
+
+thermo 1000
+
+#fix 1 all box/relax x 0.0 y 0.0 xy 0.0
+min_style       cg 
+minimize        0 1e-9 100000 100000
+#minimize        0 0.5 10 10
+
+#unfix freeze
+#unfix relax
+#unfix 1
+undump 1
+
+#write_data      min2.lammps
