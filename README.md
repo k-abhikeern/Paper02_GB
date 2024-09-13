@@ -36,9 +36,9 @@ This repository contains MATLAB scripts designed to produce results for Single-L
 
 ## License
 
-This repository is licensed under the [MIT License](LICENSE).
+This repository is licensed under the LICENSE.md
 
 ## Contact
 
-For any questions or issues, please contact [Kunwar Abhikeern] at [kunwarabhikeern@gmail.com].
+For any questions or issues, please contact Kunwar Abhikeern at kunwarabhikeern@gmail.com.
 
